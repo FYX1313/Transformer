@@ -1,2 +1,0 @@
-# Transformer
-手动实现Transformer并应用在IWSLT2017机器翻译中
