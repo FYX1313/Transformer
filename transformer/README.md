@@ -21,6 +21,13 @@ bash ./scripts/run.sh
 self.pos_encoding = PositionalEncoding(d_model, max_len, dropout)
 x = self.pos_encoding(x.transpose(0, 1)).transpose(0, 1)
 ```
+4.本实验未将数据集加载到本地然后再加载，而是直接在代码中联网获取数据集，所以请确保网络畅通。
+```
+dataset = load_dataset("iwslt2017", "iwslt2017-zh-en")
+train_data = list(dataset['train'])
+val_data = list(dataset['validation'])
+test_data = list(dataset['test'])
+```
 ## 实验结果
 我们进行了15轮训练，得到了训练集、验证集各轮的损失，并采用最佳模型在测试集上进行测试，得到了测试集上的损失。为了更清楚地看到模型效果，我们提供了几个中文样本进行翻译测试。此外，我们还更改多头注意力的“头数”进行对比试验，并移除位置编码部分进行了消融实验。
 
