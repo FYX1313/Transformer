@@ -343,12 +343,12 @@ def main():
     # 超参数
     batch_size = 16
     max_len = 32
-    d_model = 128
+    d_model = 512
     n_layers = 6
     n_heads = 8
-    d_ff = 512
+    d_ff = 2048
     dropout = 0.2
-    num_epochs = 5
+    num_epochs = 15
     learning_rate = 5e-5
 
     #生成时间戳
@@ -491,4 +491,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
